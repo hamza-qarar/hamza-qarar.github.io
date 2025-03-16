@@ -3,8 +3,13 @@
     src: url(Fonts/Kugile_Demo.ttf);
 }
 
+@font-face {
+    font-family: Matrixtype;
+    src: url(Fonts/Matrixtype\ Display.ttf);
+}
+
 body {
-    background-color: rgb(11, 11, 11);
+    background-color: hsl(0, 0%, 4%);
     margin: 0;
 }
 
@@ -59,24 +64,35 @@ h2, h3, p {
     align-items: center;
     height: 45rem;
     width: 100%;
-    /*margin-top: 5rem;*/
+    margin: 0;
     padding-top: 5rem;
     background-image: url(Bilder/cartist-3iUE4iEIdJw-unsplash.jpg);
     background-position: center;
     background-position-y: top;
-    background-size: 100%;
+    background-size: contain;
     /*background-repeat: no-repeat;*/
 }
 
 #bannerbox {
-    background-color: aqua;
+    background-color: hsla(0, 0%, 4%, 0.95);
     width: 40rem;
-    height: 30rem;
+    height: 45rem;
     margin: auto;
+    padding-top: 0;
 }
 
-#bannerbox h2 {
-    padding: 70px 0;
+#bannerbox div {
+    padding: 220px 0 0 0;
+}
+
+#bannerbox div h1 {
+    text-align: center;
+    font-family: "Matrixtype";
+    font-size: 4rem;
+    color: blueviolet;
+}
+
+#bannerbox div h2 {
     text-align: center;
     font-family: monospace;
     font-size: 2rem;
