@@ -8,6 +8,10 @@
     src: url(Fonts/Matrixtype\ Display.ttf);
 }
 
+h1, h2, h3, h4, p {
+    font-family: monospace;
+}
+
 body {
     background-color: hsl(0, 0%, 4%);
     margin: 0;
@@ -92,13 +96,49 @@ h2, h3, p {
     color: blueviolet;
 }
 
-#bannerbox div h2 {
+h2 {
     text-align: center;
     font-family: monospace;
     font-size: 2rem;
 }
 
+#projekte {
+    margin-top: 10rem;
+}
+
+.boxen {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.projektbox {
+    width: 25rem;
+    height: auto;
+    overflow: hidden;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0%, 7%);
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+}
+
 .projektbox a img {
-    height: 100px;
-    width: auto;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.projektbox p {
+    text-align: center;
+    font-size: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
