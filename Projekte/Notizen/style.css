@@ -1,0 +1,44 @@
+* {
+    font-family:'Times New Roman', Times, serif;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+thead td {
+    text-align: center;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    max-width: 700px;
+}
+
+td {
+    padding: 15px;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+thead {
+    color: white;
+    background-color: hsl(270, 85%, 20%);
+}
+
+h1 {
+    color: hsl(270, 45%, 50%);
+}
+
+.selector {
+    font-family: monospace;
+    font-size: 14px;
+    min-width: max-content;
+    
+}

@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>CSS Selectors</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Selector</td><td>Name</td><td>Beschreibung</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="selector">sample</td><td>Element selector</td><td>Wählt ein Element aus.</td>
+                </tr>
+                <tr>
+                    <td class="selector">.sample</td><td>Class selector</td><td>Wählt eine Klasse aus.</td>
+                </tr>
+                <tr>
+                    <td class="selector">#sample</td><td>ID selector</td><td>Wählt eine ID aus.</td>
+                </tr>
+                <tr>
+                    <td class="selector">*</td><td>General selector</td><td>Wählt alles aus.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Flexbox</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Befehl</td><td>Beschreibung</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="selector">display: flex</td><td>Wandelt das Element in eine Flexbox, die die gesamte Zeile beansprucht.</td>
+                </tr>    
+                <tr>
+                    <td class="selector">display: inline-flex</td><td>Erlaubt mehreren Flexboxen in einer Zeile zu stehen.</td>
+                </tr>
+                <tr>
+                    <td class="selector">justify-content</td><td>Richtet Objekte entlang der X-Achse zu aus.</td>
+                </tr>
+                <tr>
+                    <td class="selector">align-items</td><td>Richtet Objekte entlang der Y-Achse zu aus.</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex-grow</td><td>Legt fest, wie viel Platz (und in welchen Proportionen) Flex-Elemente entlang der X-Achse einnehmen.</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex-shrink</td><td>Legt fest, wie viel und in welchen Proportionen Flex-Elemente entlang der X-Achse schrumpfen.</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex-basis</td><td>Legt die anfängliche Größe von Elementen fest (bevor diese wachsen oder schrumpfen).</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex</td><td>Vereint flex-shrink, flex-grow und flex-basis in einem Befehl.</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex-wrap</td><td>Legt fest, dass sich Elemente entlang der X-Achse verschieben sollen, wenn der Behälter zu klein ist.</td>
+                </tr>
+                <tr>
+                    <td class="selector">align-content</td><td>Richtet Spalten entlang der Y-Achse aus.</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex-direction</td><td>Legt X- und Y-Achse fest.</td>
+                </tr>
+                <tr>
+                    <td class="selector">flex-flow</td><td>Vereint flex-wrap und flex-direction in einem Befehl.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Grid</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Befehl</td><td>Beschreibung</td><td>Anmerkungen</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="selector">grid-template-rows</td><td>Legt die Anzahl und Größen der Zeilen fest.</td><td>Größe kann in Pixel, Prozent und Fraktionen angegeben werden.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-template-columns</td><td>Legt die Anzahl und Größen der Spalten fest.</td><td>Größe kann in Pixel, Prozent und Fraktionen angegeben werden.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-template</td><td>Verbindet grid-template-columns und grid-template-rows in einem Befehl.</td><td>Werte der Spalten sind von jenen der Zeilen durch einen Schrägsstrich getrennt.</td>
+                </tr>
+                <tr>
+                    <td class="selector">row-gap</td><td>Setzt Abstände zwischen den Zeilen.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">column-gap</td><td>Setzt Abstände zwischen den Spalten.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">gap</td><td>Verbindet row-gap und column-gap in einem Befehl.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-row-start</td><td>Legt fest, bei welcher Zeile ein Element anfängt.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-row-end</td><td>Legt fest, bei welcher Zeile ein Element endet.</td><td>Die angegebene Zahl muss stets um eins größer sein, als die letzte ausgefülle Spalte.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-row</td><td>Verbindet grid-row-start und grid-row-end in einem Befehl.</td><td>Die beiden Werte werden durch einen Schrägsstrich getrennt.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-column-start</td><td>Legt fest, bei welcher Spalte ein Element anfängt.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-column-end</td><td>Legt fest, bei welcher Spalte ein Element endet.</td><td>Die angegebene Zahl muss stets um eins größer sein, als die letzte ausgefülle Spalte.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-column</td><td>Verbindet grid-column-start und grid-column-end in einem Befehl.</td><td>Die beiden Werte werden durch einen Schrägsstrich getrennt.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-area</td><td>Verbindet grid-row-start, grid-row-end, grid-column-start und grid-column-end in einem Befehl.</td><td>Alle Werte werden durch einen Schrägsstrich getrennt.</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-template areas</td><td>Legt Namen für Berreiche im Grid fest.</td><td>Die Namen werden in Form eines Grids aufgeschrieben. Zeilen sind in Anführungszeichen eingeschlossen, Spalten durch Leerzeichen getrennt.</td>
+                </tr>
+                <tr>
+                    <td class="selector">justify-items</td><td>Richtet einzelne Elemente entlang der X-Achse zu aus.</td><td>Wird auf den Grid-Behälter angewandt</td>
+                </tr>
+                <tr>
+                    <td class="selector">justify-content</td><td>Richtet Elementgruppen entlang der X-Achse zu aus.</td><td>Wird auf den Grid-Behälter angewandt</td>
+                </tr>
+                <tr>
+                    <td class="selector">justify-self</td><td>Richtet einzelne Elemente entlang der X-Achse zu aus.</td><td>Wird auf einzelne Elemente angewandt</td>
+                </tr>
+                <tr>
+                    <td class="selector">align-items</td><td>Richtet einzelne Elemente entlang der Y-Achse zu aus.</td><td>Wird auf den Grid-Behälter angewandt</td>
+                </tr>
+                <tr>
+                    <td class="selector">align-content</td><td>Richtet Elementgruppen entlang der Y-Achse zu aus.</td><td>Wird auf den Grid-Behälter angewandt</td>
+                </tr>
+                <tr>
+                    <td class="selector">align-self</td><td>Richtet einzelne Elemente entlang der Y-Achse zu aus.</td><td>Wird auf einzelne Elemente angewandt</td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-auto-rows</td><td>Legt die Höhe von automatisch hinzugefügten Zeilen fest.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-auto-columns</td><td>Legt die Breite von automatisch hinzugefügten Spalten fest.</td><td></td>
+                </tr>
+                <tr>
+                    <td class="selector">grid-auto-flow</td><td>Legt fest, an welcher Stelle automatische Elemente erstellt werden sollen.</td><td></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

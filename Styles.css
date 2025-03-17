@@ -12,6 +12,10 @@ h1, h2, h3, h4, p {
     font-family: monospace;
 }
 
+p {
+    font-size: 1rem;
+}
+
 body {
     background-color: hsl(0, 0%, 4%);
     margin: 0;
@@ -103,7 +107,7 @@ h2 {
 }
 
 #projekte {
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 .boxen {
@@ -137,8 +141,50 @@ h3 {
 
 .projektbox p {
     text-align: center;
-    font-size: 1rem;
     margin-right: 2rem;
     margin-left: 2rem;
     margin-bottom: 2rem;
+}
+
+#ÜberMich {
+    margin-top: 8rem;
+}
+
+#vitabox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80rem;
+    height: 30rem;
+    margin: 6rem auto 0;
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0%, 7%);
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+}
+
+#ÜberMich .text {
+    width: 40rem;
+}
+
+.text h3 {
+    font-size: 1.75rem;
+    padding-top: 5rem;
+}
+
+.text p {
+    margin: 5rem;
+    text-align: center;
+}
+
+#ÜberMich .bild{
+    width: 40rem;
+    height: 100%;
+    background-image: url("Bilder/mohammad-rahmani-1bNQVGzuy0U-unsplash.jpg");
+    background-size: cover;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.bild img {
+    height: 30rem;
 }

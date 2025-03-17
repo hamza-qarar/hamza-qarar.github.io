@@ -1,0 +1,190 @@
+@font-face {
+    font-family: Breitkopffraktur;
+    src: url(Fonts/BreitkopfFraktur.ttf);
+}
+
+@font-face {
+    font-family: Kabinett Fraktur;
+    src: url(Fonts/Kabinett-Fraktur-Mager.ttf);
+}
+
+@font-face {
+    font-family: Kurrent;
+    src: url(Fonts/18thCtrKurStart.ttf);
+}
+
+@font-face {
+    font-family: Parchment;
+    src: url(Fonts/PARCHM.TTF);
+}
+
+@font-face {
+    font-family: Sketch Gothic School;
+    src: url(Fonts/Sketch-Gothic-School.ttf);
+}
+
+body {
+    background-image: url(Bilder/Bücherregal.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 32px 15%;
+}
+
+#inhalt {
+    background-image: url(Bilder/Pergament.jpg);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 16px 32px 32px;
+    margin-bottom: 16px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    min-width: 600px;
+}
+
+h1 {
+    font-family: "Sketch Gothic School";
+    font-size: 100px;
+    font-weight: lighter;
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+
+#menü {
+    /*background-color: hsl(23, 77%, 14%);
+    box-shadow: 0px 0px 40px hsla(0, 0%, 0%, 0.57) inset;*/
+    padding: 16px;
+    border-radius: 50px;
+}
+
+#menü ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+#menü li {
+    display: inline-block;
+    font-family: "Breitkopffraktur";
+    font-size: 32px;
+    /*color: rgb(155, 115, 16);
+    text-shadow: rgb(168, 128, 16) 1px 0px;
+    text-shadow: rgb(255, 214, 100) -1px 0px;*/
+}
+
+#menü a {
+    color: hsl(23, 77%, 14%);
+    text-decoration: none;
+}
+
+h2 {
+    font-family: "Kabinett Fraktur";
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url(Bilder/Weltkugeln.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: 32px;
+    border-radius: 50px;
+}
+
+#banner h2 {
+    color: whitesmoke;
+    text-shadow: 2px 1px 0px rgba(0,0,0,1), -1px -1px 0px rgba(0,0,0,1), 0px 0px 20px rgba(0,0,0,1);
+    /*background-color: hsla(0, 0, 0, 0.5);*/
+}
+
+#bannerbox {
+    background-color: hsla(0, 0, 0, 0.5);
+
+}
+
+p {
+    font-family: "Breitkopffraktur";
+    font-size: 28px;
+    hyphens: auto;
+}
+
+#banner p {
+    font-weight: lighter;
+}
+
+.texte {
+    margin: auto 64px 32px;
+}
+
+.überschrift {
+    margin-bottom: 64px;
+}
+
+.boxen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.bildbox {
+    width: 20%;
+    min-width: 144px;
+    margin: 0 16px;
+}
+
+.boxenbild {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+h3 {
+    font-family: "Breitkopffraktur";
+    font-size: 36px;
+}
+
+#linguisten .boxen {
+    display: flex;
+    flex-flow: nowrap;
+    background-image: url(Bilder/Box\ 4.jpg);
+    background-position: center;
+    background-size: 100%;
+    padding: 32px 8px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.porträtbox {
+    width: 30%;
+    min-width: 144px;
+    width: 30%;
+    height: auto;
+    margin: 0 16px;
+    flex-shrink: 2;
+}
+
+.porträt {
+    width: 90%;
+    aspect-ratio: 4 / 5;
+    border-radius: 100%;
+}
+
+.porträtbox p {
+    color: white;
+}
+
+footer {
+    background-image: linear-gradient(180deg, hsl(20, 77%, 10%), hsl(20, 77%, 5%));
+    padding: 16px 32px;
+    text-align: center;
+    color: hsl(41, 62%, 85%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
