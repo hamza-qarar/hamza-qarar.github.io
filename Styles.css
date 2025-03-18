@@ -46,6 +46,13 @@ nav ul {
     display: flex;
     list-style: none;
     flex-shrink: 5;
+    /*width: 15rem;*/
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+nav ul li {
+    width: 13rem;
 }
 
 nav ul li a {
@@ -57,13 +64,60 @@ nav ul li a {
 }
 
 #nav-logo {
-    height: 5rem;
-    width: auto;
+    height: 4rem;
+    width: 4rem;
     margin-left: 30px;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+    display: none;
+}
+
+.dropdown p {
+    font-family: monospace;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.dropdown a {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 0.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 7%);
+    width: 140px;
+    height: 120px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown a:hover {
+    color: #8a2ce2;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 main {
-    background-color: hsl(0, 0%, 4%);
+    /*background-color: hsl(0, 0%, 4%);*/
+    background-image: url(Bilder/Wabenmuster.png);
+    background-size: 20rem;
+    background-blend-mode: darken;
+    background-repeat: repeat;
     position: relative;
     z-index: 2;
     padding-bottom: 8rem;
@@ -85,7 +139,7 @@ h2, h3, p, li {
     background-position: center;
     background-position-y: top;
     background-size: contain;
-    /*background-repeat: no-repeat;*/
+    /**/
 }
 
 #bannerbox {
@@ -104,7 +158,7 @@ h2, h3, p, li {
     text-align: center;
     font-family: "Matrixtype";
     font-size: 4rem;
-    color: blueviolet;
+    color: #8a2ce2;
 }
 
 h2 {
@@ -196,6 +250,98 @@ h3 {
     height: 30rem;
 }
 
+@media only screen and  (max-width: 1350px) {
+    #vitabox {
+        width: 60rem;
+    }
+
+    #ÜberMich .text {
+        width: 30rem;
+    }
+
+    #ÜberMich .bild {
+        width: 30rem;
+    }
+}
+
+@media only screen and  (max-width: 1050px) {
+    nav ul li {
+        width: 10rem;
+    }
+
+    nav ul li a {
+        font-size: 1.3rem;
+    }
+
+    #vitabox {
+        width: 40rem;
+        height: 60rem;
+    }
+
+    #ÜberMich .text {
+        width: 40rem;
+        height: 30rem;
+    }
+
+    #ÜberMich .bild {
+        width: 40rem;
+        height: 30rem;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0.5rem;
+    }
+}
+
+@media only screen and  (max-width: 850px) {
+    .dropdown {
+        display: block;
+    }
+
+    /*.dropdown-content:hover {
+        display: block;
+    }
+
+    .dropdown-content ul li a {
+        display: block;
+    }*/
+
+    nav ul {
+        display: none;
+    }
+}
+
+@media only screen and  (max-width: 750px) {
+    #banner {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    #bannerbox {
+        width: 100%;
+        height: auto;
+    }
+
+    #bannerbox div {
+        margin-bottom: 5rem;
+        padding: 0;
+    }
+    
+    #vitabox {
+        width: 100%;
+        border-top-left-radius: 0rem;
+        border-top-right-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+        border-bottom-right-radius: 0rem;
+    }
+
+    #ÜberMich .text {
+        width: 100%;
+    }
+    
+    #ÜberMich .bild {
+        width: 100%;
+    }    
+}
+
 footer {
     text-align: center;
     background-color: hsl(0, 0%, 7%);
@@ -204,6 +350,10 @@ footer {
     bottom: 0;
     left: 0;
     z-index: 1;
+}
+
+footer img {
+    height: 8rem;
 }
 
 #copy {
