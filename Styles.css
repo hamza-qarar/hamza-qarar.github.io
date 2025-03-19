@@ -128,6 +128,28 @@ h2, h3, p, li {
     color: white;
 }
 
+@keyframes animatebottom{
+    from {
+        bottom:-300px;
+        opacity:0;
+    }
+    to {
+        bottom:0;
+        opacity:1;
+    }
+}
+
+@keyframes einblenden{
+    from {
+        /*bottom:-300px;*/
+        opacity:0;
+    }
+    to {
+        /*bottom:0;*/
+        opacity:1;
+    }
+}
+
 #banner {
     display: flex;
     align-items: center;
@@ -139,7 +161,6 @@ h2, h3, p, li {
     background-position: center;
     background-position-y: top;
     background-size: contain;
-    /**/
 }
 
 #bannerbox {
@@ -152,6 +173,9 @@ h2, h3, p, li {
 
 #bannerbox div {
     padding: 220px 0 0 0;
+    position: relative;
+    animation-name: animatebottom;
+    animation-duration: 1s 
 }
 
 #bannerbox div h1 {
@@ -165,10 +189,16 @@ h2 {
     text-align: center;
     font-family: monospace;
     font-size: 2rem;
+    position: relative;
 }
 
 #projekte {
     margin-top: 8rem;
+    position: relative;
+}
+
+.animation {
+    animation: einblenden 1s ease;
 }
 
 .boxen {
@@ -212,6 +242,9 @@ h3 {
 }
 
 #vitabox {
+    /*position: relative;
+    animation-name: animatebottom;
+    animation-duration: 1s;*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
