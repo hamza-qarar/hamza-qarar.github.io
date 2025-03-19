@@ -217,7 +217,29 @@ h2 {
     border-radius: 0.5rem;
     background-color: hsl(0, 0%, 7%);
     box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
+    transition: box-shadow 0.5s ease-in-out;
 }
+
+.projektbox:hover {
+    box-shadow: 0px 0px 5px 1px hsl(247, 100%, 69%)
+}
+
+/*.projektbox.lila {
+    box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.lila:hover {
+    box-shadow: 0px 0px 5px 1px hsl(275, 100%, 50%)
+}
+
+.lilablau:hover {
+    box-shadow: 0px 0px 5px 1px hsl(247, 100%, 69%)
+}
+
+.lilablau:hover {
+    box-shadow: 0px 0px 5px 1px hsl(180, 100%, 42%)
+}*/
 
 .projektbox a img {
     width: 100%;

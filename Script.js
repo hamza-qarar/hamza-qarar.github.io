@@ -1,21 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", () => {
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                return;
-            } else {
-                entry.target.classList.remove('in-view');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    const allAnimatedElements = document.querySelectorAll('.animation');
-
-    allAnimatedElements.forEach((element) => observer.observe(element));
-})*/
-
 
 // Create the observer
 const observer = new IntersectionObserver(entries => {
@@ -34,3 +16,7 @@ const observer = new IntersectionObserver(entries => {
   observer.observe(document.querySelector('.boxen'));
   observer.observe(document.querySelector('#vitatitel'));
   observer.observe(document.querySelector('#vitabox'));
+
+
+
+  
