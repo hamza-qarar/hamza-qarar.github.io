@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Nunito;
-    src: url(Fonts/Nunito-Medium.ttf);
+    font-family: Zeroes;
+    src: url(Fonts/Zeroes\ Three.otf);
 }
 
 @font-face {
@@ -16,12 +16,14 @@ html {
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, p {
-    font-family: "Nunito";
+h2, h3, h4, a {
+    font-family: "Zeroes";
+    font-weight: lighter;
 }
 
 p {
     font-size: 1rem;
+    font-family: monospace;
 }
 
 body {
@@ -82,9 +84,13 @@ nav {
 }
 
 nav.scrolled {
-    transform: translateY(-2px);
-    animation: slow-glow 7.5s ease-in-out infinite;
-    filter: brightness(1.1);
+    box-shadow:
+    inset 20px 0 80px rgb(10, 167, 75),   /* inner left magenta short */
+    inset -20px 0 80px hsl(180, 100%, 50%),  /* inner right cyan short */
+    inset 20px 0 300px rgb(16, 119, 153),  /* inner left magenta broad */
+    inset -20px 0 300px rgb(38, 18, 186), /* inner right cyan broad */
+    -10px 0 10px rgb(11, 112, 149),        /* outer left magenta */
+    10px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
 }
 
 nav.scrolled2 {
@@ -111,14 +117,15 @@ nav ul {
 }*/
 
 nav ul li a {
-    font-family: monospace;
+    font-family: "Zeroes", monospace;
     font-size: 1.3rem;
     color: whitesmoke;
     text-decoration: none;
     margin: 1rem;
     padding: 0.5rem;
     border-radius: 15px;
-    transition: all 1s ease;
+    transition: transform 250ms ease, filter 250ms ease;
+    z-index: 1;
 }
 
 @keyframes pulse-glow {
@@ -151,10 +158,26 @@ nav ul li a {
     }
 }
 
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    inset: 0 -6px;              
+    border-radius: 15px;
+    pointer-events: none;      
+    opacity: 0;
+    transition: opacity 350ms ease;
+    will-change: opacity;
+    animation: pulse-glow 2.5s ease-in-out infinite;
+    z-index: -1;
+}
+
 nav ul li a:hover {
     transform: translateY(-2px);
-    animation: pulse-glow 2.5s ease-in-out infinite;
     filter: brightness(1.1);
+}
+
+nav ul li a:hover::after {
+    opacity: 1;
 }
 
 nav ul li a.scrolled {
@@ -541,14 +564,11 @@ footer img {
 
 footer a {
     text-decoration: none;
-}
-
-footer p {
     transition: color 0.3s ease-in-out;
 }
 
-footer a p:hover {
-    color: blueviolet;
+footer a:hover {
+    color: hsl(271, 100%, 70%);
 }
 
 #copy {
