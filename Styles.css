@@ -8,6 +8,11 @@
     src: url(Fonts/Matrixtype\ Display.ttf);
 }
 
+@font-face {
+    font-family: Opensans;
+    src: url(Fonts/OpenSans-ExtraBold.ttf);
+}
+
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -310,16 +315,10 @@ h2, h3, p, li, a {
 
 #bannerbox div h1 {
     text-align: center;
-    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-family: "Opensans";
     font-size: 4rem;
     animation-name: einblenden;
-    background-image: linear-gradient(100deg, hsl(291, 100%, 48%), hsl(159, 100%, 50%));
-    background-clip: text;
-    color: transparent;
-    /*text-shadow: 0px 0px 30px hsl(0, 0%, 0%),
-                 0px 0px 30px hsla(0, 0%, 0%, 0.297);
-                 -1px -1px hsl(0, 0%, 0%),
-                 1px 1px hsl(0, 0%, 0%);*/
+    color: hsl(159, 96%, 48%);
 }
 
 #bannerbox div h2 {
@@ -582,4 +581,35 @@ footer a:hover {
 
 #copy {
     margin-top: 3rem;
+}
+
+/* Breath Animation Styles */
+:root {
+    --speed: 1200ms;
+    --really-green: oklch(88.14% 0.203 158.82);
+}
+
+*[letter-animation="breath"] > span {
+    display: inline-block;
+    white-space: break-spaces;
+    transform-origin: center bottom;
+    backface-visibility: hidden;
+    will-change: transform, text-shadow;
+    animation: breath var(--speed) cubic-bezier(0.22, 1, 0.36, 1) calc(var(--index) * 100ms) 1 forwards;
+}
+
+*[letter-animation="breath"],
+*[letter-animation="breath"] > span {
+    font-family: "Opensans", sans-serif;
+}
+
+@keyframes breath {
+    0% {
+        transform: scale(1) translateY(0) translateZ(0);
+        text-shadow: 0 0 0 transparent;
+    }
+    100% {
+        transform: scale(1.25) translateY(-5px) perspective(1px);
+        text-shadow: 0 0 20px var(--really-green);
+    }
 }
