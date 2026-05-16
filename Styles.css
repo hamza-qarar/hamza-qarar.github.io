@@ -31,6 +31,11 @@ p {
     font-family: monospace;
 }
 
+.unterstrichen {
+    text-decoration: underline;
+    font-family: inherit;
+}
+
 body {
     margin: 0;
     cursor: crosshair;
@@ -356,21 +361,53 @@ h2 {
     width: 52rem;
     height: 20rem;
     overflow: hidden;
-    border-radius: 0.5rem;
+    border-radius: 1.25rem;
     background-color: hsl(0, 0%, 7%);
     box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
     transition: box-shadow 0.5s ease-in-out;
     position: relative;
 }
 
-.projektbox:nth-child(odd) {
-    align-self: flex-start;
+.projektbox.rechts {
+    flex-direction: row-reverse;
 }
 
-.projektbox:nth-child(even) {
+.box-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+.box-wrapper.links {
+    align-self: flex-start;
+    flex-direction: row;
+}
+
+.box-wrapper.rechts {
     align-self: flex-end;
     flex-direction: row-reverse;
 }
+
+.box-logo img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: contain;
+    opacity: 0.75;
+}
+
+.projektbox.rechts .background {
+    transform: scaleX(-1);
+}
+
+/* --- Violettes Farbschema (links) --- */
+/* Tile-Farbe wird von .projektbox .tile geerbt (rgba 138, 44, 226) */
+
+/* --- Grünes Farbschema (rechts) --- */
+.projektbox.rechts .tile {
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+
 
 .box-bild {
     width: 20rem;
@@ -393,7 +430,7 @@ h2 {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 0.4rem;
+    border-radius: 1rem;
 }
 
 .box-text {
@@ -404,6 +441,18 @@ h2 {
     padding: 1.5rem 2rem;
     position: relative;
     z-index: 2;
+}
+
+.box-text h4 {
+    text-align: center;
+}
+
+.projektbox.links .box-text h4 {
+    color: hsl(174, 56%, 44%);
+}
+
+.projektbox.rechts .box-text h4 {
+    color: hsl(270, 67%, 57%);
 }
 
 /*.projektbox {
@@ -445,16 +494,44 @@ h2 {
 
 .projektbox .shine::before {
     content: '';
-    width: 150%;
-    padding-bottom: 150%;
+    width: 180%;
+    padding-bottom: 180%;
     border-radius: 50%;
     position: absolute;
     left: 50%;
-    bottom: 55%;
-    filter: blur(35px);
-    opacity: .12;
+    bottom: 52%;
+    filter: blur(30px);
+    opacity: .06;
     transform: translateX(-50%);
-    background-image: conic-gradient(from 205deg at 50% 50%, rgba(138, 44, 226, 0) 0deg, hsl(275, 100%, 50%) 25deg, rgba(100, 44, 226, 0.18) 295deg, rgba(138, 44, 226, 0) 360deg);
+    background-image: conic-gradient(
+        from 112deg at 50% 50%,
+        rgba(138, 44, 226, 0)      0deg,
+        hsl(265, 100%, 60%)        18deg,
+        hsl(275, 100%, 55%)        30deg,
+        rgba(138, 44, 226, 0.12)   280deg,
+        rgba(138, 44, 226, 0)      360deg
+    );
+}
+
+.projektbox.rechts .shine::before {
+    content: '';
+    width: 180%;
+    padding-bottom: 180%;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 52%;
+    filter: blur(30px);
+    opacity: .06;
+    transform: translateX(-50%);
+    background-image: conic-gradient(
+        from 112deg at 50% 50%,
+        rgba(16, 185, 129, 0)      0deg,
+        hsl(160, 100%, 60%)        18deg,
+        hsl(150, 100%, 65%)        30deg,
+        rgba(16, 185, 129, 0.12)   280deg,
+        rgba(16, 185, 129, 0)      360deg
+    );
 }
 
 .projektbox .background {
@@ -556,6 +633,7 @@ h2 {
     height: 1px;
     transform-origin: 0 50%;
     transform: scaleX(0);
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .projektbox .line::after {
@@ -626,6 +704,14 @@ h2 {
 .projektbox:hover .line-5::after { transition-delay: .15s; }
 .projektbox:hover .line-6::after { transition-delay: 0s; }
 .projektbox:hover .line-7::after { transition-delay: .3s; }
+
+.projektbox.links:hover {
+    box-shadow: 0px 0px 24px 6px rgba(138, 44, 226, 0.45);
+}
+
+.projektbox.rechts:hover {
+    box-shadow: 0px 0px 24px 6px rgba(16, 185, 129, 0.45);
+}
 
 /*.projektbox.lila {
     box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
@@ -703,6 +789,47 @@ h3 {
 
 .bild img {
     height: 30rem;
+}
+
+#kenntnisse {
+    margin-top: 6rem;
+    padding: 0 2rem;
+}
+
+#kenntnistitel {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5rem;
+}
+
+.kenntnis-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem 0.2rem;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.kenntnis-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 0 0 11rem;
+}
+
+.kenntnis-item img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+}
+
+.kenntnis-item p {
+    text-align: center;
+    font-size: 0.85rem;
+    margin: 0;
+    color: whitesmoke;
 }
 
 @media only screen and  (max-width: 1350px) {
