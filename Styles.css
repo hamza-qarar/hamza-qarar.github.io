@@ -342,21 +342,68 @@ h2 {
 
 .boxen {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin: 4rem auto;
+    max-width: 75rem;
+    padding: 0 2rem;
 }
 
 .projektbox {
-    width: 25rem;
-    height: auto;
+    display: flex;
+    flex-direction: row;
+    width: 52rem;
+    height: 20rem;
     overflow: hidden;
-    margin: 2rem;
     border-radius: 0.5rem;
     background-color: hsl(0, 0%, 7%);
     box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
     transition: box-shadow 0.5s ease-in-out;
+    position: relative;
+}
+
+.projektbox:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.projektbox:nth-child(even) {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.box-bild {
+    width: 20rem;
+    height: 20rem;
+    flex-shrink: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.box-bild a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.box-bild img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.4rem;
+}
+
+.box-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 /*.projektbox {
@@ -377,11 +424,208 @@ h2 {
 
 .projektbox .projekttext {
     width: 30rem;
-}*/
+}
 
 .projektbox:hover {
-    box-shadow: 0px 0px 5px 1px hsl(247, 100%, 69%);
+    box-shadow: 0px 0px 12px 3px hsl(247, 100%, 69%);
+}*/
+
+/* --- Hover-Effekt: Shine, Tiles, Lines --- */
+
+.projektbox .shine {
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .5s;
+    pointer-events: none;
 }
+
+.projektbox .shine::before {
+    content: '';
+    width: 150%;
+    padding-bottom: 150%;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 55%;
+    filter: blur(35px);
+    opacity: .12;
+    transform: translateX(-50%);
+    background-image: conic-gradient(from 205deg at 50% 50%, rgba(138, 44, 226, 0) 0deg, hsl(275, 100%, 50%) 25deg, rgba(100, 44, 226, 0.18) 295deg, rgba(138, 44, 226, 0) 360deg);
+}
+
+.projektbox .background {
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-mask-image:
+        radial-gradient(circle at 60% 5%, black 0%, black 15%, rgba(0,0,0,0.15) 70%, transparent 85%),
+        linear-gradient(to bottom, black 55%, transparent 100%);
+    -webkit-mask-composite: destination-in;
+    mask-image:
+        radial-gradient(circle at 60% 5%, black 0%, black 15%, rgba(0,0,0,0.15) 70%, transparent 85%),
+        linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-composite: intersect;
+}
+
+.projektbox .tiles {
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.projektbox .tile {
+    position: absolute;
+    background-color: rgba(138, 44, 226, 0.1);
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+.projektbox .tile-2,
+.projektbox .tile-7,
+.projektbox .tile-13,
+.projektbox .tile-18 { animation-delay: -2s; }
+
+.projektbox .tile-3,
+.projektbox .tile-8,
+.projektbox .tile-12,
+.projektbox .tile-17 { animation-delay: -4s; }
+
+.projektbox .tile-4,
+.projektbox .tile-11,
+.projektbox .tile-16,
+.projektbox .tile-20 { animation-delay: -6s; }
+
+/* Unregelmäßige Dauern — keine gemeinsamen Vielfachen */
+.projektbox .tile-1,  .projektbox .tile-8,  .projektbox .tile-14 { animation-duration: 5s; }
+.projektbox .tile-3,  .projektbox .tile-10, .projektbox .tile-17 { animation-duration: 7s; }
+.projektbox .tile-5,  .projektbox .tile-12, .projektbox .tile-19 { animation-duration: 11s; }
+.projektbox .tile-6,  .projektbox .tile-13, .projektbox .tile-20 { animation-duration: 13s; }
+
+/* Reihe 1 (8 Spalten à 12.5%) */
+.projektbox .tile-1  { top: 0;     left: 0;      height: 10%;   width: 12.5%; }
+.projektbox .tile-2  { top: 0;     left: 12.5%;  height: 10%;   width: 12.5%; }
+.projektbox .tile-3  { top: 0;     left: 25%;    height: 10%;   width: 12.5%; }
+.projektbox .tile-4  { top: 0;     left: 37.5%;  height: 10%;   width: 12.5%; }
+.projektbox .tile-5  { top: 0;     left: 50%;    height: 10%;   width: 12.5%; }
+.projektbox .tile-6  { top: 0;     left: 62.5%;  height: 10%;   width: 12.5%; }
+.projektbox .tile-7  { top: 0;     left: 75%;    height: 10%;   width: 12.5%; }
+.projektbox .tile-8  { top: 0;     left: 87.5%;  height: 10%;   width: 12.5%; }
+/* Reihe 2 */
+.projektbox .tile-9  { top: 10%;   left: 0;      height: 22.5%; width: 12.5%; }
+.projektbox .tile-10 { top: 10%;   left: 12.5%;  height: 22.5%; width: 12.5%; }
+.projektbox .tile-11 { top: 10%;   left: 25%;    height: 22.5%; width: 12.5%; }
+.projektbox .tile-12 { top: 10%;   left: 37.5%;  height: 22.5%; width: 12.5%; }
+.projektbox .tile-13 { top: 10%;   left: 50%;    height: 22.5%; width: 12.5%; }
+.projektbox .tile-14 { top: 10%;   left: 62.5%;  height: 22.5%; width: 12.5%; }
+.projektbox .tile-15 { top: 10%;   left: 75%;    height: 22.5%; width: 12.5%; }
+.projektbox .tile-16 { top: 10%;   left: 87.5%;  height: 22.5%; width: 12.5%; }
+/* Reihe 3 (rechte Hälfte) */
+.projektbox .tile-17 { top: 32.5%; left: 50%;    height: 22.5%; width: 12.5%; }
+.projektbox .tile-18 { top: 32.5%; left: 62.5%;  height: 22.5%; width: 12.5%; }
+.projektbox .tile-19 { top: 32.5%; left: 75%;    height: 22.5%; width: 12.5%; }
+.projektbox .tile-20 { top: 32.5%; left: 87.5%;  height: 22.5%; width: 12.5%; }
+
+@keyframes tile {
+    0%, 12.5%, 100% { opacity: 1; }
+    25%, 82.5%      { opacity: 0; }
+}
+
+.projektbox .line {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .35s;
+}
+
+.projektbox .line::before,
+.projektbox .line::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.12);
+    transition: transform .35s;
+}
+
+.projektbox .line::before {
+    left: 0; right: 0;
+    height: 1px;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+}
+
+.projektbox .line::after {
+    top: 0; bottom: 0;
+    width: 1px;
+    transform-origin: 50% 0;
+    transform: scaleY(0);
+}
+
+.projektbox .line-1::before { top: 10%; }
+.projektbox .line-1::after  { left: 25%; }
+.projektbox .line-1::before,
+.projektbox .line-1::after  { transition-delay: .3s; }
+
+.projektbox .line-2::before { top: 32.5%; }
+.projektbox .line-2::after  { left: 50%; }
+.projektbox .line-2::before,
+.projektbox .line-2::after  { transition-delay: .15s; }
+
+.projektbox .line-3::before { top: 55%; }
+.projektbox .line-3::after  { left: 75%; }
+
+/* Linien 4–7: nur vertikal, kein horizontales Element */
+.projektbox .line-4::before,
+.projektbox .line-5::before,
+.projektbox .line-6::before,
+.projektbox .line-7::before { display: none; }
+
+.projektbox .line-4::after  { left: 12.5%;  transition-delay: .3s; }
+.projektbox .line-5::after  { left: 37.5%;  transition-delay: .15s; }
+.projektbox .line-6::after  { left: 62.5%;  transition-delay: 0s; }
+.projektbox .line-7::after  { left: 87.5%;  transition-delay: .3s; }
+
+/* Hover-Zustände */
+.projektbox:hover .shine {
+    opacity: 1;
+    transition-duration: .5s;
+    transition-delay: 0s;
+}
+
+.projektbox:hover .tiles {
+    opacity: 1;
+    transition-delay: .25s;
+}
+
+.projektbox:hover .tile {
+    animation-name: tile;
+}
+
+.projektbox:hover .line {
+    opacity: 1;
+    transition-duration: .15s;
+}
+
+.projektbox:hover .line::before { transform: scaleX(1); }
+.projektbox:hover .line::after  { transform: scaleY(1); }
+
+.projektbox:hover .line-1::before,
+.projektbox:hover .line-1::after { transition-delay: 0s; }
+
+.projektbox:hover .line-2::before,
+.projektbox:hover .line-2::after { transition-delay: .15s; }
+
+.projektbox:hover .line-3::before,
+.projektbox:hover .line-3::after { transition-delay: .3s; }
+
+.projektbox:hover .line-4::after { transition-delay: 0s; }
+.projektbox:hover .line-5::after { transition-delay: .15s; }
+.projektbox:hover .line-6::after { transition-delay: 0s; }
+.projektbox:hover .line-7::after { transition-delay: .3s; }
 
 /*.projektbox.lila {
     box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
@@ -400,22 +644,19 @@ h2 {
     box-shadow: 0px 0px 5px 1px hsl(180, 100%, 42%)
 }*/
 
-.projektbox a img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 h3 {
     text-align: center;
     font-size: 1.5rem;
 }
 
-.projektbox p {
+.box-text h3 {
     text-align: center;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+.box-text p {
+    text-align: center;
+    margin: 0.75rem 0 0;
 }
 
 #ÜberMich {
@@ -502,6 +743,23 @@ h3 {
         height: 30rem;
         border-top-right-radius: 0;
         border-bottom-left-radius: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .projektbox {
+        width: 100%;
+        height: auto;
+        flex-direction: column !important;
+    }
+
+    .box-bild {
+        width: 100%;
+        height: 16rem;
+    }
+
+    .boxen {
+        padding: 0 2rem;
     }
 }
 
