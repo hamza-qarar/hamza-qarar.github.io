@@ -31,6 +31,10 @@ p {
     font-family: monospace;
 }
 
+.pfeil {
+    color: hsl(271, 100%, 70%);
+}
+
 .unterstrichen {
     text-decoration: underline;
     font-family: inherit;
@@ -82,35 +86,21 @@ nav {
     height: 5rem;
     width: 100%;
     z-index: 3;
-    /*background-image: linear-gradient(180deg, hsl(255, 80%, 51%), hsl(255, 59%, 45%));
-    box-shadow:
-    inset 20px 0 80px rgb(149, 1, 255),   /* inner left magenta short */
-    /*inset -20px 0 80px hsl(180, 100%, 50%),  /* inner right cyan short */
-    /*inset 20px 0 300px rgb(68, 0, 163),  /* inner left magenta broad */
-    /*inset -20px 0 300px rgb(117, 0, 111), /* inner right cyan broad */
-    /*-10px 0 10px rgb(149, 0, 255),        /* outer left magenta */
-    /*10px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
-    transition-duration: 1s;
+    background: rgba(8, 8, 8, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.4s ease;
 }
 
 nav.scrolled {
-    box-shadow:
-    inset 20px 0 80px rgb(10, 167, 75),   /* inner left magenta short */
-    inset -20px 0 80px hsl(180, 100%, 50%),  /* inner right cyan short */
-    inset 20px 0 300px rgb(16, 119, 153),  /* inner left magenta broad */
-    inset -20px 0 300px rgb(38, 18, 186), /* inner right cyan broad */
-    -10px 0 10px rgb(11, 112, 149),        /* outer left magenta */
-    10px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
+    background: rgba(40, 10, 70, 0.65);
+    border-bottom-color: rgba(138, 44, 226, 0.25);
 }
 
 nav.scrolled2 {
-    box-shadow:
-    inset 20px 0 80px rgb(149, 1, 255),   /* inner left magenta short */
-    inset -20px 0 80px hsl(180, 100%, 50%),  /* inner right cyan short */
-    inset 20px 0 300px rgb(68, 0, 163),  /* inner left magenta broad */
-    inset -20px 0 300px rgb(117, 0, 111), /* inner right cyan broad */
-    -10px 0 10px rgb(149, 0, 255),        /* outer left magenta */
-    10px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
+    background: rgba(0, 40, 50, 0.65);
+    border-bottom-color: rgba(0, 210, 200, 0.2);
 }
 
 nav ul {
@@ -129,59 +119,59 @@ nav ul {
 nav ul li a {
     font-family: "Zeroes", monospace;
     font-size: 1.3rem;
-    color: whitesmoke;
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-    margin: 1rem;
-    padding: 0.5rem;
-    border-radius: 15px;
-    transition: transform 250ms ease, filter 250ms ease;
-    z-index: 1;
+    margin: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: color 200ms ease, transform 250ms ease, filter 250ms ease;
 }
 
 @keyframes pulse-glow {
     0% {
         box-shadow:
-        inset 5px 0 15px hsl(275, 100%, 50%),   /* inner left magenta short */
-        inset -10px 0 15px hsla(180, 100%, 50%, 0.85),  /* inner right cyan short */
-        inset 10px 0 30px hsl(265, 100%, 32%),  /* inner left magenta broad */
-        inset -10px 0 30px hsl(303, 100%, 23%), /* inner right cyan broad */
-        -2px 0 10px hsl(275, 100%, 50%),        /* outer left magenta */
-        2px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
+        inset 5px 0 15px hsl(275, 100%, 50%),
+        inset -10px 0 15px hsla(180, 100%, 50%, 0.85),
+        inset 10px 0 30px hsl(265, 100%, 32%),
+        inset -10px 0 30px hsl(303, 100%, 23%),
+        -2px 0 10px hsl(275, 100%, 50%),
+        2px 0 10px hsl(180, 100%, 50%);
     }
     50% {
         box-shadow:
-        inset 5px 0 15px hsl(145, 89%, 35%),   /* inner left magenta short */
-        inset -10px 0 15px hsl(180, 100%, 50%, 0.85),  /* inner right cyan short */
-        inset 10px 0 30px hsl(195, 81%, 33%),  /* inner left magenta broad */
-        inset -10px 0 30px hsl(247, 82%, 40%), /* inner right cyan broad */
-        -2px 0 10px hsl(196, 86%, 31%),        /* outer left magenta */
-        2px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
+        inset 5px 0 15px hsl(145, 89%, 35%),
+        inset -10px 0 15px hsl(180, 100%, 50%, 0.85),
+        inset 10px 0 30px hsl(195, 81%, 33%),
+        inset -10px 0 30px hsl(247, 82%, 40%),
+        -2px 0 10px hsl(196, 86%, 31%),
+        2px 0 10px hsl(180, 100%, 50%);
     }
     100% {
         box-shadow:
-        inset 5px 0 15px hsl(275, 100%, 50%),   /* inner left magenta short */
-        inset -10px 0 15px hsl(180, 100%, 50%, 0.85),  /* inner right cyan short */
-        inset 10px 0 30px hsl(265, 100%, 32%),  /* inner left magenta broad */
-        inset -10px 0 30px hsl(303, 100%, 23%), /* inner right cyan broad */
-        -2px 0 10px hsl(275, 100%, 50%),        /* outer left magenta */
-        2px 0 10px hsl(180, 100%, 50%);         /* outer right cyan */
+        inset 5px 0 15px hsl(275, 100%, 50%),
+        inset -10px 0 15px hsl(180, 100%, 50%, 0.85),
+        inset 10px 0 30px hsl(265, 100%, 32%),
+        inset -10px 0 30px hsl(303, 100%, 23%),
+        -2px 0 10px hsl(275, 100%, 50%),
+        2px 0 10px hsl(180, 100%, 50%);
     }
 }
 
 nav ul li a::after {
     content: "";
     position: absolute;
-    inset: 0 -6px;              
+    inset: 0 -6px;
     border-radius: 15px;
-    pointer-events: none;      
+    pointer-events: none;
     opacity: 0;
     transition: opacity 350ms ease;
-    will-change: opacity;
     animation: pulse-glow 2.5s ease-in-out infinite;
     z-index: -1;
 }
 
 nav ul li a:hover {
+    color: rgba(255, 255, 255, 1);
     transform: translateY(-2px);
     filter: brightness(1.1);
 }
@@ -190,14 +180,133 @@ nav ul li a:hover::after {
     opacity: 1;
 }
 
-nav ul li a.scrolled {
-    box-shadow: none !important;
+#nav-suche {
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#sprachschalter {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    transition: color 200ms ease, background 200ms ease;
+    text-decoration: none;
+}
+
+#sprachschalter:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+#suchsymbol {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    transition: color 200ms ease, background 200ms ease;
+}
+
+#suchsymbol:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+#sucheingabe {
+    width: 0;
+    opacity: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    outline: none;
+    transition: width 300ms ease, opacity 300ms ease;
+}
+
+#sucheingabe::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#nav-suche.aktiv #sucheingabe {
+    width: 12rem;
+    opacity: 1;
+}
+
+#such-ergebnis {
+    font-family: monospace;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    min-width: 0;
+    transition: color 200ms ease;
+}
+
+#such-liste {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: rgba(12, 12, 12, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 0.5rem;
+    min-width: 16rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    z-index: 10;
+}
+
+#such-liste:empty {
+    display: none;
+}
+
+.such-item {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease;
+}
+
+.such-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.such-leer {
+    padding: 0.6rem 1rem;
+    color: rgba(255, 255, 255, 0.35);
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+mark.such-markierung {
+    background: rgba(200, 200, 200, 0.25);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 2px;
+    font-family: inherit;
+    outline: 1px solid rgba(200, 200, 200, 0.35);
 }
 
 #nav-logo {
+    position: absolute;
+    left: 2rem;
     height: 4rem;
     width: 4rem;
-    margin-left: 30px;
+    filter: grayscale(1);
+    opacity: 1;
 }
 
 .dropdown {
@@ -324,6 +433,7 @@ h2, h3, p, li, a {
     font-size: 4rem;
     animation-name: einblenden;
     color: hsl(159, 96%, 48%);
+    letter-spacing: 0.12em;
 }
 
 #bannerbox div h2 {
@@ -341,8 +451,12 @@ h2 {
     position: relative;
 }
 
+#projekttitel, .boxen, #vitatitel, #vitabox {
+    opacity: 0;
+}
+
 .animation {
-    animation: einblenden 1s ease;
+    animation: einblenden 1s ease forwards;
 }
 
 .boxen {
@@ -366,6 +480,7 @@ h2 {
     box-shadow: 0px 0px 5px 1px hsl(0, 0%, 0%);
     transition: box-shadow 0.5s ease-in-out;
     position: relative;
+    cursor: pointer;
 }
 
 .projektbox.rechts {
@@ -431,6 +546,15 @@ h2 {
     object-fit: cover;
     display: block;
     border-radius: 1rem;
+}
+
+.box-bild::after {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.75);
+    pointer-events: none;
 }
 
 .box-text {
