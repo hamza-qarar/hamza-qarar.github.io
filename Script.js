@@ -8,7 +8,15 @@ const span = (text, index) => {
   return node;
 };
 
-const byLetter = (text) => [...text].map(span);
+const byLetter = (text) => {
+    let idx = 0;
+    return text.split(' ').map((word) => {
+        const wordWrap = document.createElement('span');
+        wordWrap.className = 'wort';
+        [...word].forEach(char => wordWrap.appendChild(span(char, idx++)));
+        return wordWrap;
+    });
+};
 
 const byWord = (text) => text.split(" ").map(span);
 

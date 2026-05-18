@@ -27,7 +27,7 @@ h2, h3, h4, a {
 }
 
 p {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1vw, 1.6rem);
     font-family: monospace;
 }
 
@@ -118,7 +118,7 @@ nav ul {
 
 nav ul li a {
     font-family: "Zeroes", monospace;
-    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 1.2vw, 2rem);
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     margin: 0.5rem;
@@ -399,17 +399,7 @@ h2, h3, p, li, a {
     background-position-x: left;
     background-position-y: center;
     background-size: 100%;
-    
-    /*&::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle,rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.72) 100%);
-        background-size: 100%;
-    }*/
+    background-repeat: no-repeat;
 }
 
 #bannerbox {
@@ -428,9 +418,12 @@ h2, h3, p, li, a {
 }
 
 #bannerbox div h1 {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35em;
     font-family: "Opensans";
-    font-size: 4rem;
+    font-size: clamp(4rem, 4vw, 7rem);
     animation-name: einblenden;
     color: hsl(159, 96%, 48%);
     letter-spacing: 0.12em;
@@ -442,7 +435,7 @@ h2, h3, p, li, a {
 
 h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: clamp(2rem, 2vw, 3.5rem);
     position: relative;
 }
 
@@ -465,15 +458,15 @@ h2 {
     align-items: flex-start;
     gap: 2.5rem;
     margin: 4rem auto;
-    max-width: 75rem;
+    max-width: clamp(75rem, 75vw, 115rem);
     padding: 0 2rem;
 }
 
 .projektbox {
     display: flex;
     flex-direction: row;
-    width: 52rem;
-    height: 20rem;
+    width: clamp(52rem, 52vw, 88rem);
+    height: clamp(20rem, 20vw, 32rem);
     overflow: hidden;
     border-radius: 1.25rem;
     background-color: hsl(0, 0%, 7%);
@@ -525,8 +518,8 @@ h2 {
 
 
 .box-bild {
-    width: 20rem;
-    height: 20rem;
+    height: 100%;
+    aspect-ratio: 1;
     flex-shrink: 0;
     padding: 1rem;
     box-sizing: border-box;
@@ -856,7 +849,7 @@ h2 {
 
 h3 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.5vw, 2.5rem);
 }
 
 .box-text h3 {
@@ -1032,6 +1025,53 @@ h3 {
     }
 }
 
+@media (orientation: portrait) and (max-width: 768px) {
+    #bannerbox div h2 {
+        font-size: 1.5rem;
+    }
+
+    .box-wrapper.links,
+    .box-wrapper.rechts {
+        flex-direction: column !important;
+        align-self: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #vitabox {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .text p {
+        margin: 1.5rem;
+    }
+
+    #nav-suche.aktiv #sucheingabe {
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        width: auto;
+        border-radius: 0;
+        padding: 0.75rem 1rem;
+        background: rgba(12, 12, 12, 0.95);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        font-size: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #such-liste {
+        position: fixed;
+        top: 7.75rem;
+        left: 0;
+        right: 0;
+        min-width: unset;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
+
 @media only screen and  (max-width: 750px) {
     #banner {
         background-size: cover;
@@ -1105,6 +1145,24 @@ footer a:hover {
     backface-visibility: hidden;
     will-change: transform, text-shadow;
     animation: breath var(--speed) cubic-bezier(0.22, 1, 0.36, 1) calc(var(--index) * 100ms) 1 forwards;
+}
+
+*[letter-animation="breath"] > span.wort {
+    white-space: nowrap;
+    animation: none;
+    transform: none;
+    will-change: auto;
+}
+
+
+*[letter-animation="breath"] > span.wort > span {
+    display: inline-block;
+    white-space: break-spaces;
+    transform-origin: center bottom;
+    backface-visibility: hidden;
+    will-change: transform, text-shadow;
+    animation: breath var(--speed) cubic-bezier(0.22, 1, 0.36, 1) calc(var(--index) * 100ms) 1 forwards;
+    font-family: "Opensans", sans-serif;
 }
 
 *[letter-animation="breath"],
