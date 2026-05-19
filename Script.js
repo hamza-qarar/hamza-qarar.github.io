@@ -126,6 +126,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Mobiles Dropdown-Menü
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.dropdown');
+    if (!dropdown) return;
+
+    dropdown.querySelector('p').addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('offen');
+    });
+
+    dropdown.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            dropdown.classList.remove('offen');
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('offen');
+        }
+    });
+});
+
 // Suchfunktion
 document.addEventListener('DOMContentLoaded', function() {
     const suchsymbol = document.getElementById('suchsymbol');

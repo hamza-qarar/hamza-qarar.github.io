@@ -311,45 +311,55 @@ mark.such-markierung {
 
 .dropdown {
     position: relative;
-    display: inline-block;
     display: none;
+    cursor: pointer;
 }
 
 .dropdown p {
-    font-family: monospace;
-    font-size: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    font-family: "Zeroes", monospace;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .dropdown a {
-    font-family: monospace;
-    font-size: 1.5rem;
-    color: whitesmoke;
+    font-family: "Zeroes", monospace;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    margin: 0.5rem;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    display: block;
+    padding: 0.85rem 2rem;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    transition: color 150ms ease, background 150ms ease;
 }
-  
+
 .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: hsl(0, 0%, 7%);
-    width: 140px;
-    height: 120px;
-    border-radius: 0.5rem;
-    box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, 0.2);
-    padding: 12px 16px;
-    z-index: 1;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 0;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown.offen .dropdown-content {
+    display: flex;
 }
 
 .dropdown a:hover {
-    color: #8a2ce2;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
+    color: white;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 main {
@@ -1036,6 +1046,7 @@ h3 {
         align-self: center;
         align-items: center;
         width: 100%;
+        gap: 2.5rem;
     }
 
     #vitabox {
@@ -1045,6 +1056,67 @@ h3 {
 
     .text p {
         margin: 1.5rem;
+    }
+
+    #banner {
+        height: auto;
+        min-height: 100svh;
+    }
+
+    #bannerbox {
+        height: auto;
+        padding: 5.5rem 1rem 1.5rem;
+    }
+
+    #bannerbox div {
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    main {
+        padding-bottom: 2rem;
+    }
+
+    #projekte {
+        margin-top: 3rem;
+    }
+
+    .boxen {
+        gap: 6rem;
+        margin: 2.5rem auto;
+    }
+
+    #ÜberMich {
+        margin-top: 3rem;
+    }
+
+    #vitabox {
+        margin-top: 1.5rem;
+    }
+
+    #ÜberMich .text {
+        width: 100%;
+        height: auto;
+    }
+
+    .text h3 {
+        padding-top: 1.25rem;
+    }
+
+    .text p {
+        margin: 1rem 1.5rem;
+    }
+
+    #kenntnisse {
+        margin-top: 3rem;
+    }
+
+    #kenntnistitel {
+        margin-bottom: 1.5rem;
+    }
+
+    .kenntnis-grid {
+        gap: 1.5rem 0.2rem;
     }
 
     #nav-suche.aktiv #sucheingabe {
